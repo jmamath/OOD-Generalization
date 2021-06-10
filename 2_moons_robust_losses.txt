@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon May 10 07:09:37 2021
+
+@author: root
+"""
+
+The robust losses don't change neither the decision boundaries nor the 
+accuracy very much.
+
+Our interpretation is that it is because the losses were designed
+with the Huber robustness in mind. That is, to make inference robust to 
+anomalies, or misclassified example. 
+
+This is the result we got with density_estimate_1d, but it is not the case
+of OOD with the two moons. To further validate this hypothesis we should reconduct
+an experiment with some misclassified sample. T
+
+The interest of such an experiment would be the inference part. 
+Indeed, since we cannot have the true predictive distribution, it would be 
+interesting to see how the robust losses would alleviate the false confidence
+of the estimated probability p(y|x) neural net.
+
+I suspect that training on a noiser dataset like noise_dataset would help the robust losses
+to shine.
